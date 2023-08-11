@@ -85,7 +85,11 @@ public:
     static bool canDynamicallyAdjustParameters()
     {
         // We can add more DAWs or formats here if needed
+#if 0
         return PluginHostType::getPluginLoadedAs() != AudioProcessor::wrapperType_LV2;
+#else
+        return true;
+#endif
     }
     
     void setName(String const& newName)
